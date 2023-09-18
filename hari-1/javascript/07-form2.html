@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validasi</title>
+    <script src="07-validasi.js"></script>
+</head>
+<body>
+    <h2>Form Pendaftaran</h2>
+    <form action="" method="post" name="frmdaftar" onsubmit="return cekform()">
+        Nama Lengkap : <input type="text" name="nama" id="nama"><br>
+        Olahraga :
+        <select name="olahraga" id="olahraga">
+            <option value="">-</option>
+            <option value="sepak_bola">Sepak Bola</option>
+            <option value="bulu_tangkis">Bulu Tangkis</option>
+            <option value="tenis">Tenis</option>
+            <option value="tenis_meja">Tenis Meja</option>
+        </select>
+        <br>
+        <input type="submit" name="tblSimpan" value="Save">
+        <input type="reset" name="tblReset" value="Reset">
+    </form>
+</body>
+</html>

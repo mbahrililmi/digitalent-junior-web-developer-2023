@@ -1,0 +1,8 @@
+h1 {
+  border: 2px dotted green;
+  text-align: center;
+}
+p {
+  text-decoration: underline;
+  font-weight: bold;
+}
