@@ -88,8 +88,17 @@ label {
 }
 
 input[type="text"],
-input[type="radio"] {
+input[type="radio"],
+input[type="date"] {
   width: 98%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+select {
+  width: 100%;
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
@@ -123,15 +132,15 @@ button:hover {
   border: none;
   border-radius: 3px;
 }
-.button:hover{
+.button:hover {
   background-color: #0056b3;
 }
-.select{
-   background-color: #f0f0f0; /* Ganti dengan warna latar belakang yang Anda inginkan */
-    color: #333; /* Ganti dengan warna teks yang Anda inginkan */
-    padding: 5px; /* Ganti dengan padding yang Anda inginkan */
-    border: 1px solid #ccc; /* Ganti dengan gaya border yang Anda inginkan */
-    border-radius: 4px; /* Ganti dengan radius sudut yang Anda inginkan */
+.select {
+  background-color: #f0f0f0; /* Ganti dengan warna latar belakang yang Anda inginkan */
+  color: #333; /* Ganti dengan warna teks yang Anda inginkan */
+  padding: 5px; /* Ganti dengan padding yang Anda inginkan */
+  border: 1px solid #ccc; /* Ganti dengan gaya border yang Anda inginkan */
+  border-radius: 4px; /* Ganti dengan radius sudut yang Anda inginkan */
 }
 
 /* margin bootom */
