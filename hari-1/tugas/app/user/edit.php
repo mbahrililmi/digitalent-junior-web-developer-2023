@@ -3,7 +3,15 @@
 
 <!-- code php -->
 <?php
-$titleTab = 'Buat Anggota';
+$titleTab = 'Ubah Anggota';
+
+// include koneksi
+include "../../database/koneksi.php";
+
+$id = $_GET["id"];
+$query = "SELECT * FROM user WHERE id = $id";
+$result = mysqli_query($connection, $query);
+$row = mysqli_fetch_assoc($result);
 ?>
 
 <!-- head -->
@@ -11,9 +19,7 @@ $titleTab = 'Buat Anggota';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <?= $titleTab ?? 'Perpustakaan' ?>
-    </title>
+    <title>Form Anggota</title>
     <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
 
@@ -37,25 +43,25 @@ $titleTab = 'Buat Anggota';
             </div>
 
             <div class="mt-3">
-                <form action="./store.php" method="POST" onsubmit="return validation();">
+                <form action="./update.php?id=<?= $row["id"] ?>" method="POST" onsubmit="return validation();">
                     <label for="id_anggota">ID Anggota:</label>
-                    <input type="number" id="id_anggota" name="id_anggota" required>
+                    <input type="text" id="id_anggota" name="id_anggota" value="<?= $row['id_anggota']; ?>" required>
 
                     <label for="nama">Nama:</label>
-                    <input type="text" id="nama" name="nama" required>
+                    <input type="text" id="nama" name="nama" value="<?= $row['name']; ?>" required>
 
                     <label for="jenis_kelamin">Jenis Kelamin:</label>
                     <select id="jenis_kelamin" class="select mb-2" name="jenis_kelamin" required>
                         <option value=""><strong>Pilih Jenis Kelamin</strong></option>
-                        <option value="l">Laki-Laki</option>
-                        <option value="p">Perempuan</option>
+                        <option <?= $row['gender'] == 'l' ? 'selected' : '' ?> value="l">Laki-Laki</option>
+                        <option <?= $row['gender'] == 'p' ? 'selected' : '' ?> value="p">Perempuan</option>
                     </select>
 
                     <label for="alamat">Alamat:</label>
-                    <textarea type="text" id="alamat" name="alamat" rows="5" class="mb-2" style="width: 100%;" required></textarea>
+                    <textarea type="text" id="alamat" name="alamat" rows="5" class="mb-2" style="width: 100%;" required><?= $row['address']; ?></textarea>
 
                     <div class="text-right">
-                        <button type="submit" name="submit">Submit</button>
+                        <button type="submit" name="submit">Update</button>
                     </div>
                 </form>
             </div>

@@ -1,9 +1,6 @@
-<?php 
-// koneksi ke database
+<?php
+// koneksi database
 include '../../database/koneksi.php';
-
-// ambil data dari form
-$id = $_GET['id'];
 
 if (isset($_POST["submit"])) {
 
@@ -12,8 +9,7 @@ if (isset($_POST["submit"])) {
     $gender = $_POST["jenis_kelamin"];
     $address = $_POST["alamat"];
 
-    $query = "UPDATE user SET id_anggota = '$id_anggota', name = '$name', gender = '$gender', address = '$address' WHERE id = '$id'";
-
+    $query = "INSERT INTO user VALUES(NULL, '$id_anggota', '$name', '$gender', '$address')";
     $result = mysqli_query($connection, $query);
 
     if ($result) {
@@ -21,5 +17,4 @@ if (isset($_POST["submit"])) {
     } else {
         echo "Gagal mengubah data!";
     }
-    
 }

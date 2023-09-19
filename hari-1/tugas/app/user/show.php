@@ -4,6 +4,13 @@
 <!-- code php -->
 <?php
 $titleTab = 'List Anggota';
+
+// include koneksi
+include "../../database/koneksi.php";
+
+$query = "SELECT * FROM user";
+$result = mysqli_query($connection, $query);
+$counter = 0;
 ?>
 
 <!-- head -->
@@ -50,28 +57,20 @@ $titleTab = 'List Anggota';
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>#4444</td>
-                        <td>M. Bahril Ilmi</td>
-                        <td>Laki-Laki</td>
-                        <td>Pagatan Tanah Bumbu</td>
-                        <td>
-                            <a href="./update.php" class="button">Edit</a>
-                            <a href="./delete.php" class="button bg-red">Delete</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>#4445</td>
-                        <td>M. Hafi Maulani</td>
-                        <td>Laki-Laki</td>
-                        <td>Pagatan Tanah Bumbu</td>
-                        <td>
-                            <a href="./update.php" class="button">Edit</a>
-                            <a href="./delete.php" class="button bg-red">Delete</a>
-                        </td>
-                    </tr>
+                    <?php while ($row = mysqli_fetch_assoc($result)) {
+                        $counter++; ?>
+                        <tr>
+                            <td><?= $counter ?></td>
+                            <td><?= $row['id_anggota'] ?></td>
+                            <td><?= $row['name'] ?></td>
+                            <td><?= $row['gender'] == 'l' ? 'Laki-laki' : 'Perempuan' ?></td>
+                            <td><?= $row['address'] ?></td>
+                            <td>
+                                <a href="./edit.php?id=<?= $row["id"] ?>" class="button">Edit</a>
+                                <a href="./delete.php?id=<?= $row["id"] ?>" class="button bg-red" onclick="return confirm('Apakah yakin ingin menghapus data ini?')">Delete</a>
+                            </td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
 
