@@ -46,6 +46,7 @@ $titleTab = 'List Anggota';
                         <th>Nama</th>
                         <th>Jenis Kelamin</th>
                         <th>Alamat</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,6 +56,10 @@ $titleTab = 'List Anggota';
                         <td>M. Bahril Ilmi</td>
                         <td>Laki-Laki</td>
                         <td>Pagatan Tanah Bumbu</td>
+                        <td>
+                            <a href="./update.php" class="button">Edit</a>
+                            <a href="./delete.php" class="button bg-red">Delete</a>
+                        </td>
                     </tr>
                     <tr>
                         <td>2</td>
@@ -62,6 +67,10 @@ $titleTab = 'List Anggota';
                         <td>M. Hafi Maulani</td>
                         <td>Laki-Laki</td>
                         <td>Pagatan Tanah Bumbu</td>
+                        <td>
+                            <a href="./update.php" class="button">Edit</a>
+                            <a href="./delete.php" class="button bg-red">Delete</a>
+                        </td>
                     </tr>
                 </tbody>
             </table>
