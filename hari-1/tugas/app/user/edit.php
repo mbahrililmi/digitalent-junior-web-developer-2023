@@ -45,7 +45,7 @@ $row = mysqli_fetch_assoc($result);
             <div class="mt-3">
                 <form action="./update.php?id=<?= $row["id"] ?>" method="POST" onsubmit="return validation();">
                     <label for="id_anggota">ID Anggota:</label>
-                    <input type="text" id="id_anggota" name="id_anggota" value="<?= $row['id_anggota']; ?>" required>
+                    <input type="number" id="id_anggota" name="id_anggota" value="<?= $row['id_anggota']; ?>" required>
 
                     <label for="nama">Nama:</label>
                     <input type="text" id="nama" name="nama" value="<?= $row['name']; ?>" required>

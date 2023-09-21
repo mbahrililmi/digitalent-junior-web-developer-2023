@@ -15,6 +15,6 @@ if (isset($_POST["submit"])) {
     if ($result) {
         header("Location: ./show.php");
     } else {
-        echo "Gagal mengubah data!";
+        header("Location: ./create.php");
     }
 }
